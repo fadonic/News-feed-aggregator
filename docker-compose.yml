@@ -1,0 +1,12 @@
+services:
+  news-aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_NEWSAPI_KEY: ${VITE_NEWSAPI_KEY}
+        VITE_GUARDIAN_KEY: ${VITE_GUARDIAN_KEY}
+        VITE_NYTIMES_KEY: ${VITE_NYTIMES_KEY}
+    ports:
+      - '8080:80'
+    restart: unless-stopped
