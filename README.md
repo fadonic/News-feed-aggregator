@@ -64,9 +64,9 @@ npm run dev
 ## Tech stack
 
 | Concern                | Choice                    |
-| ---------------------- | ------------------------- | --- |
+| ---------------------- | ------------------------- |
 | Framework              | React + TypeScript (Vite) |
-| Server state / caching | React/TanStack Query      |     |
+| Server state / caching | React/TanStack Query      |
 | Styling                | Tailwind CSS              |
 | HTTP                   | Axios                     |
 | Container              | Docker + Nginx            |
