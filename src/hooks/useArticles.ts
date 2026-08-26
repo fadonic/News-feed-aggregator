@@ -11,6 +11,6 @@ export function useArticles(query: ArticleQuery) {
 	return useQuery({
 		queryKey: ['articles', query],
 		queryFn: () => newsAggregatorService.fetchArticles(query),
-		placeholderData: (previousData) => previousData, // smooth pagination, no flash of empty state
+		placeholderData: (previousData) => previousData,
 	});
 }

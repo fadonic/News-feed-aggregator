@@ -5,7 +5,6 @@ import { adapterRegistry, getAllAdapters } from './adapters/registry';
 export interface AggregatedResult {
 	articles: Article[];
 	totalResults: number;
-	/** Sources that failed to respond, so the UI can surface a soft warning. */
 	failedSources: string[];
 }
 
@@ -31,14 +30,6 @@ export class NewsAggregatorService {
 		let totalResults = 0;
 		const failedSources: string[] = [];
 
-		// settled.forEach((result, i) => {
-		// 	if (result.status === 'fulfilled') {
-		// 		articles.push(...result.value.articles);
-		// 		totalResults += result.value.totalResults;
-		// 	} else {
-		// 		failedSources.push(adapters[i].id);
-		// 	}
-		// });
 		settled.forEach((result, i) => {
 			if (result.status === 'fulfilled') {
 				articles.push(...result.value.articles);

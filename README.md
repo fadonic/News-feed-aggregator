@@ -63,14 +63,13 @@ npm run dev
 
 ## Tech stack
 
-| Concern                | Choice                             |
-| ---------------------- | ---------------------------------- |
-| Framework              | React + TypeScript (Vite)          |
-| Server state / caching | TanStack Query                     |
-| Local/preference state | React Context + `useReducer`       |
-| Styling                | Tailwind CSS                       |
-| HTTP                   | Axios                              |
-| Container              | Docker (multi-stage build) + Nginx |
+| Concern                | Choice                    |
+| ---------------------- | ------------------------- | --- |
+| Framework              | React + TypeScript (Vite) |
+| Server state / caching | React/TanStack Query      |     |
+| Styling                | Tailwind CSS              |
+| HTTP                   | Axios                     |
+| Container              | Docker + Nginx            |
 
 ## Project structure
 
@@ -92,8 +91,7 @@ src/
 - **DRY**: shared types (`Article`, `ArticleQuery`) and shared UI pieces
   (`ToggleChip`) used across otherwise-unrelated features.
 - **KISS**: no state management library beyond Context where a reducer
-  is enough; two responsive breakpoints instead of five; no debouncing
-  or premature abstraction added before it was needed.
+  is enough; two responsive breakpoints instead of five.
 - **SOLID**: `NewsSourceAdapter` is the backbone — Single Responsibility
   (each adapter only knows its own API), Open/Closed (add a source by
   writing one class, not editing existing ones), Liskov Substitution
